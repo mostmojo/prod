@@ -8,6 +8,14 @@ const App = () => {
   return (
     <div className="ui container comments">
       <br />
+      <h3>My first reusable components in React🤓</h3>
+      <ApprovalCard>
+        <h4>Warning!</h4>
+        <div>
+          <p>Are you sure you want all these avos? 🥑</p>
+        </div>
+      </ApprovalCard>
+
       <ApprovalCard>
         <CommentDetail
           author="Sam"
