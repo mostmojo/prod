@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import SeasonDisplay from "./SeasonDisplay";
+import Spinner from "./Spinner";
 
 // class based component
 class App extends React.Component {
@@ -23,7 +24,7 @@ class App extends React.Component {
       // Take state from parent and pass it as a PROP to the child
       return <SeasonDisplay lat={this.state.lat} />;
     }
-    return <div>Loading!</div>;
+    return <Spinner message="Please accept location request 🙉" />;
   }
 }
 
