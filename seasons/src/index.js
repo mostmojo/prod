@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import SeasonDisplay from "./SeasonDisplay";
 
 // class based component
 class App extends React.Component {
@@ -19,7 +20,8 @@ class App extends React.Component {
     }
 
     if (!this.state.errorMessage && this.state.lat) {
-      return <div>Latitude: {this.state.lat}</div>;
+      // Take state from parent and pass it as a PROP to the child
+      return <SeasonDisplay lat={this.state.lat} />;
     }
     return <div>Loading!</div>;
   }
