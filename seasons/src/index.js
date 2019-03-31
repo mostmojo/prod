@@ -3,12 +3,7 @@ import ReactDOM from "react-dom";
 
 // class based component
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    // this is the ONLY time we do direct assignment to this.state
-    this.state = { lat: null, errorMessage: "" };
-  }
-
+  state = { lat: null, errorMessage: "" };
   // Always keep data loading material in componentDidMount(), not in constructor
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
