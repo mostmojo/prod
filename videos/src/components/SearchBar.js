@@ -12,6 +12,7 @@ class SearchBar extends React.Component {
 
     // To do:
     // make sure we call callback from parent component
+    // This will be YouTube api
   };
 
   render() {
