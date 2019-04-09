@@ -10,9 +10,7 @@ class SearchBar extends React.Component {
   onFormSubmit = event => {
     event.preventDefault();
 
-    // To do:
-    // make sure we call callback from parent component
-    // This will be YouTube api
+    this.props.onFormSubmit(this.state.searchTerm);
   };
 
   render() {
