@@ -25,5 +25,22 @@ function one() {
         }
     }
 }
-
 ```
+
+* Execution context object: **Var object, Scope chain, 'this' variable.**
+
+    1) Creation phase:
+        a) Creation of the var object
+        b) Creation of scope chain
+        c) Determine value of `this` variable.
+    ----;
+
+* Creation phase: argument object is created, containg all args that were passed into the function.
+* Code is scanned for **function declarations** - for each function, a property is created in the variable object, **pointing to the function**.
+
+    ____;
+
+    2) Execution phase:
+        a) The code of the function that generated rthe current execution context is ran line by line.
+    ----;
+
