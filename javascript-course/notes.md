@@ -37,10 +37,10 @@ function one() {
 
 * Creation phase: argument object is created, containg all args that were passed into the function.
 * Code is scanned for **function declarations** - for each function, a property is created in the variable object, **pointing to the function**.
+* Code is scanned for **variable declations** - for each var, a property is created in the var object, and set to undefined.
 
     ____;
 
     2) Execution phase:
         a) The code of the function that generated rthe current execution context is ran line by line.
     ----;
-
