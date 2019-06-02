@@ -33,14 +33,10 @@ function one() {
         a) Creation of the var object
         b) Creation of scope chain
         c) Determine value of `this` variable.
-    ----;
 
 * Creation phase: argument object is created, containg all args that were passed into the function.
-* Code is scanned for **function declarations** - for each function, a property is created in the variable object, **pointing to the function**.
-* Code is scanned for **variable declations** - for each var, a property is created in the var object, and set to undefined.
-
-    ____;
+* Code is scanned for **function declarations** - for each function, a property is created in the variable object, **pointing to the function**. &rarr; HOISTING
+* Code is scanned for **variable declations** - for each var, a property is created in the var object, and set to undefined. &rarr; HOISTING
 
     2) Execution phase:
         a) The code of the function that generated rthe current execution context is ran line by line.
-    ----;
