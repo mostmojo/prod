@@ -49,3 +49,5 @@ function one() {
 * Each new function creates a scope, the space/environment, in which the variables it defines are accessible.
 
 * Lexical scoping: a function that is lexically within another function gets access to the cope of the outer function. (Parent function).
+
+* In JS, the scope chain works from top to bottom. So, a global variable can be access in a local scope as it will read the code from top to bottom and search for any declared variables.

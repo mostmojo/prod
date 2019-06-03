@@ -41,26 +41,23 @@ console.log(age); // 23 because var age on line 25 is stored in global execution
 
 // First scoping example
 
-/*
-var a = 'Hello!';
+var a = "Hello!";
 first();
 
 function first() {
-    var b = 'Hi!';
+    var b = "Hi!";
     second();
 
     function second() {
-        var c = 'Hey!';
+        var c = "Hey!";
         console.log(a + b + c);
     }
 }
-*/
 
-
+// Returns: Hello!Hi!Hello - thanks to the scoping chain. The second function is written inside the first function, written inside the global function.
 
 // Example to show the differece between execution stack and scope chain
 
-/*
 var a = 'Hello!';
 first();
 
@@ -78,8 +75,16 @@ function third() {
     var d = 'John';
     console.log(a + b + c + d);
 }
-*/
 
+
+/*
+
+* function third() will ONLY print out Hello! John as it only has access to var a (global variable) + d.
+* The other two vars b + c are in a local scope which it doesn't have access too.
+* The second function can call the third function - third() because it has access to the global first() function.
+* third() can access var a + d because they're both in global scope.
+
+*/
 
 
 ///////////////////////////////////////
