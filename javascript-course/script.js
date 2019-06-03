@@ -35,16 +35,6 @@ console.log(age); // 23 because var age on line 25 is stored in global execution
 
 // since var age (the first one) is defined in global execution context, we can have another var age variable within a function (execution context within a function). We can have the same var age and JS won't throw an error because they're in a completely different context!
 
-
-
-
-
-
-
-
-
-
-
 ///////////////////////////////////////
 // Lecture: Scoping
 

@@ -40,3 +40,12 @@ function one() {
 
     2) Execution phase:
         a) The code of the function that generated rthe current execution context is ran line by line.
+
+
+### Scoping
+
+* Where can we access a certain variable?
+
+* Each new function creates a scope, the space/environment, in which the variables it defines are accessible.
+
+* Lexical scoping: a function that is lexically within another function gets access to the cope of the outer function. (Parent function).
