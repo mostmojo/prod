@@ -117,3 +117,17 @@ var john = {
 
 john.calculateAge();
 
+var mike = {
+    name: "Mike",
+    dob: 1992,
+};
+
+mike.calculateAge = john.calculateAge; // no parenthesis because we refer to calculateAge variable in the john object.
+mike.calculateAge();
+
+// this variable is only assigned a value when the object calls a method.
+// if we didn't have a mike object, then the this variable would always have the value of the john variable.
+// since we call the this variable down below with the mike object, then the this variable is reassigned to the value of the mike object.
+// Reminder:  the this variable only becomes something when the method gets called!
+
+
