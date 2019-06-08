@@ -86,15 +86,35 @@ function third() {
 
 */
 
-
 ///////////////////////////////////////
 // Lecture: The this keyword
 
+// console.log(this); => Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …} simply means it's the global window object
 
 
+calculateAge(1993);
 
+function calculateAge(year) {
+    console.log(2019 - year);
+    console.log(this);
+}
 
+// ^ Since the this variable is the global object and this is NOT a method, but a global function, it works :)
 
+var john = {
+    name: "John",
+    dob: 1993,
+    calculateAge: function() { // calculateAge is a method within the john object and NOT a global function.
+        console.log(this); // this here refer to the john object
+        console.log(2019 - this.dob); // because this refers to the john object, we can get the dob and subtract from current year :)
 
+        function innerFunction() { // innerFunction is a GLOBAL function that doesn't belong to an object, even though it's a function within the calculateAge function, it stands on it's own. Thus, refers to the global window object when .this is used.
+            console.log(this); // refers to window object again
+        }
+        innerFunction();
+    }
+}
+
+john.calculateAge();
 
 
