@@ -114,7 +114,5 @@ var john = {
         innerFunction();
     }
 }
-
 john.calculateAge();
-
 
