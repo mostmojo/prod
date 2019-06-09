@@ -9,18 +9,24 @@ GAME RULES:
 
 */
 
-var scores, roundScore, activePlayer, dice;
+var scores, roundScore, activePlayer;
 
 scores = [0, 0];
 roundScore = 0;
 activePlayer = 0;
 
-dice = Math.floor(Math.random() * 6) + 1; // floor rounds down to nearest whole number. random generates random number from 0 to 1 in decimal.
-
 document.querySelector("#current-" + activePlayer).textContent = dice;
 // document.querySelector("#current-" + activePlayer).innerHTML = "<em>" + dice + "</em>"
 
-var x = document.querySelector("#score-0").textContent;
+var x = document.querySelector("#score-0");
 console.log(x);
 
 // document.querySelector(".dice").style.display = "none";
+
+document.querySelector(".btn-roll").addEventListener('click', function() {
+// 1. Random number
+var dice = Math.floor(Math.random() * 6) + 1;
+// 2. Display result
+
+// 3. Update round score only if rolled number was not a 1.
+})
