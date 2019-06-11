@@ -36,8 +36,8 @@ document.querySelector(".btn-roll").addEventListener('click', function() {
         activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
         roundScore = 0;
 
-        document.getElementById("current-0").textContnt = "0";
-        document.getElementById("current-1").textContnt = "0";
+        document.getElementById("current-0").textContent = "0";
+        document.getElementById("current-1").textContent = "0";
 
         // document.querySelector(".player-0-panel").classList.remove("active");
         // document.querySelector(".player-1-panel").classList.add("active");
@@ -48,12 +48,12 @@ document.querySelector(".btn-roll").addEventListener('click', function() {
     }
 });
 
-var x = document.querySelector(".btn-hold").addEventListener("click", function() {
+document.querySelector(".btn-hold").addEventListener("click", function() {
     // Add CURRENT score to GLOBAL score
     scores[activePlayer] += roundScore;
 
     // Update UI
-
+    document.querySelector("#score-" + activePlayer).textContent = scores[activePlayer];
     // Check if player won the game
 })
 
