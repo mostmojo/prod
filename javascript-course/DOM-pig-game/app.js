@@ -46,6 +46,15 @@ document.querySelector(".btn-roll").addEventListener('click', function() {
 
         document.querySelector(".dice").style.display = "none";
     }
+});
+
+var x = document.querySelector(".btn-hold").addEventListener("click", function() {
+    // Add CURRENT score to GLOBAL score
+    scores[activePlayer] += roundScore;
+
+    // Update UI
+
+    // Check if player won the game
 })
 
 
