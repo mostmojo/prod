@@ -32,3 +32,30 @@ mark.calculateAge();
 console.log(john.lastName);
 console.log(jane.lastName);
 console.log(mark.lastName);
+
+// --- PRACTICE --- //
+
+var Pokemon = function(name, type, attack) {
+    this.name = name;
+    this.type = type;
+    this.attack = attack;
+}
+
+Pokemon.prototype.calcDamage = function() {
+    console.log(100 - this.attack);
+};
+
+Pokemon.prototype.myOwner = 'Ash Ketchup';
+
+var pikachu = new Pokemon('Pikachu', 'Electric', 48);
+var slowbro = new Pokemon('Slowbro', 'Water', 35);
+var machamp = new Pokemon('Machamp', 'Fight', 51);
+
+pikachu.calcDamage();
+slowbro.calcDamage();
+machamp.calcDamage();
+
+console.log(pikachu.myOwner);
+console.log(slowbro.myOwner);
+console.log(machamp.myOwner);
+
