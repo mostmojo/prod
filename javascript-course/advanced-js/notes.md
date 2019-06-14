@@ -8,3 +8,9 @@
 * The prototype property of an object is where we can put methods and properties that we want **other objects to inherit**.
 * The Constructor's prototype property is **NOT** the prototype of the Constructor itself. It's the prototype of **ALL** instances that are created through it.
 * When a certain method(or property) is called, the search starts in the object itself, and if it cannot be found, the search moves on to the object's prototype. This continues until the method is found: **prototype chain**.
+
+* John can inherit `calculateAge()` method as the `person constructor` has the method added to it as a `prototype`. Thus, then `John` (which is an instance of `person constructor`) can call `calculateAge()`.
+* Anything put into `prototype property` of an object can be inherited by other objects.
+* **The real rabbit hole:** The `person constructor` is an **instance** of `object Object constructor`, which has a bunch of other properties such as `toString()`, `valueOf()`, `hasOwnProperty()`, etc. The `person constructor` object can call these properties 😊
+* And so can `John object`! All because of the `prototype chain`.
+* The only thing above the `object Object` parent is `null`, which has no other properties.
