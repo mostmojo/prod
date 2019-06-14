@@ -1,3 +1,4 @@
+
 var john = {
     name: 'John',
     dob: 1993,
@@ -59,3 +60,21 @@ console.log(pikachu.myOwner);
 console.log(slowbro.myOwner);
 console.log(machamp.myOwner);
 
+// 🔺----- Object.create() -----🔺 //
+
+var personProto = {
+    calculateAge: function() {
+        console.log(2019 - this.dob);
+    }
+};
+
+var john = Object.create(personProto);
+john.name = 'John';
+john.dob = 1990;
+john.job = 'teacher';
+
+var jane = Object.create(personProto, {
+    name: { value: 'Jane' },
+    dob: { value: 1969 },
+    job: { value: 'designer' }
+});
