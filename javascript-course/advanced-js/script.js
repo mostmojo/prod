@@ -126,6 +126,7 @@ console.log(obj.city) // San Francisco (changes as it points to object)
 
 var years = [1990, 1965, 1937, 2005, 1998];
 
+//this func has 2 params. Loop and grab index and callback to 2nd function to calcAge
 function arrayCalc(arr, fn) {
     var arrResult = [];
     for (var i = 0; i < arr.length; i++) {
@@ -134,9 +135,11 @@ function arrayCalc(arr, fn) {
     return arrResult;
 }
 
+// callback func which calcs age
 function calculateAge(element) {
     return 2019 - element;
 }
 
+// var ages with arrayCalc functiion w/ 2 args where 2nd arg is a func
 var ages = arrayCalc(years, calculateAge);
 console.log(ages);
