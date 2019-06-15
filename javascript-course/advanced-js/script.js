@@ -78,3 +78,21 @@ var jane = Object.create(personProto, {
     dob: { value: 1969 },
     job: { value: 'designer' }
 });
+
+// Primitives & Objects
+
+var a = 23;
+var b = a;
+a = 46; // mutation doesn't affect value of var b
+console.log(a); // 46
+console.log(b); // 23
+
+var obj1 = {
+    name: 'John',
+    age: 26
+};
+
+var obj2 = obj1;
+obj1.age = 30;
+console.log(obj1.age); // 30
+console.log(obj2.age); // 30
