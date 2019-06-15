@@ -116,10 +116,27 @@ change(age, obj);
 console.log(age); // 26 (unchanged because primitive)
 console.log(obj.city) // San Francisco (changes as it points to object)
 
-// when we pass a primitive into the function, a simple copy is created
-// we ca change 'a' as many times as we want. It won't affect var on the outside of the function scope, because it's a primitive
-// when we pass the object, we actually pass a reference to the object
-// Again, it's the reference that POINTS to the object
-// so when we change the object inside the function, it's reflected outside too :)
+/* when we pass a primitive into the function, a simple copy is created
+* we can change 'a' as many times as we want. It won't affect var on the outside of the function scope, because it's a primitive
+* when we pass the object, we actually pass a reference to the object
+* again, it's the reference that POINTS to the object
+* so when we change the object inside the function, it's reflected outside too :) */
 
+// 🔺 --- Passing functions as arguments --- 🔺
 
+var years = [1990, 1965, 1937, 2005, 1998];
+
+function arrayCalc(arr, fn) {
+    var arrResult = [];
+    for (var i = 0; i < arr.length; i++) {
+        arrResult.push(fn(arr[i]));
+    }
+    return arrResult;
+}
+
+function calculateAge(element) {
+    return 2019 - element;
+}
+
+var ages = arrayCalc(years, calculateAge);
+console.log(ages);

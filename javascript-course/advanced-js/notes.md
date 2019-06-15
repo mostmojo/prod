@@ -14,3 +14,10 @@
 * **The real rabbit hole:** The `person constructor` is an **instance** of `object Object constructor`, which has a bunch of other properties such as `toString()`, `valueOf()`, `hasOwnProperty()`, etc. The `person constructor` object can call these properties 😊
 * And so can `John object`! All because of the `prototype chain`.
 * The only thing above the `object Object` parent is `null`, which has no other properties.
+
+#### First-class functions
+* Function is an instance of the Object type.
+* Function behaves like any other object.
+* Can store functions in a variable.
+* Can pass function as an argument to another function.
+* We can return a function from a function.
