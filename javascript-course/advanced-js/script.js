@@ -81,18 +81,45 @@ var jane = Object.create(personProto, {
 
 // Primitives & Objects
 
+// Primitives
 var a = 23;
 var b = a;
 a = 46; // mutation doesn't affect value of var b
 console.log(a); // 46
 console.log(b); // 23
 
+// Objects
 var obj1 = {
     name: 'John',
     age: 26
 };
 
-var obj2 = obj1;
+var obj2 = obj1; // points to obj1 so has same values in memory
 obj1.age = 30;
 console.log(obj1.age); // 30
 console.log(obj2.age); // 30
+
+// Functions
+
+var age = 26;
+var obj = {
+    name: 'Jacob',
+    city: 'London'
+}
+
+function change(a, b) {
+    a = 30;
+    b.city = 'San Francisco';
+}
+
+change(age, obj);
+console.log(age); // 26 (unchanged because primitive)
+console.log(obj.city) // San Francisco (changes as it points to object)
+
+// when we pass a primitive into the function, a simple copy is created
+// we ca change 'a' as many times as we want. It won't affect var on the outside of the function scope, because it's a primitive
+// when we pass the object, we actually pass a reference to the object
+// Again, it's the reference that POINTS to the object
+// so when we change the object inside the function, it's reflected outside too :)
+
+
