@@ -257,3 +257,4 @@ function interviewQuestion(job) {
 }
 
 interviewQuestion('teacher')('John');
+// Because an inner function always has access to the variables and parameters of its outer function, even after the outer function has returned, we can invoke both arguments teacher and john and watch the magic happen!
