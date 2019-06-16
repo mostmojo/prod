@@ -197,3 +197,27 @@ designerQuestion('Jane'); // Jane, can you please explain what UX design is?
 designerQuestion('Mark'); // Mark, can you please explain what UX design is?
 
 interviewQuestion('teacher')('Mark'); // fn works from left to right, so teacher arg will replace job param, then run that anon function and insert Mark arg in name param :)
+
+
+// 🔺----- Immediately invoked function expressions (IIFE) -----🔺 //
+
+// function game() {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5);
+// }
+// game();
+
+// IIFE: Wrap all in parentheses to trick JS parser into thinking it's an expression, not a declaration. Then we invoke it at the end.
+(function () {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+})();
+
+console.log(score); // undefined because we made a private variable that only lives in the scope of the function
+
+(function (goodLuckParam) {
+    var score = Math.random() * 10;
+    console.log(score >= 5 - goodLuckParam);
+})(6); // will always be true in this case because 6 is > 5, no matter if the Math.random gives anything below 5.
+
+// Purpose of this is to create a private scope 🚀
