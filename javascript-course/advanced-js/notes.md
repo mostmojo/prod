@@ -16,8 +16,14 @@
 * The only thing above the `object Object` parent is `null`, which has no other properties.
 
 #### First-class functions
+
 * Function is an instance of the Object type.
 * Function behaves like any other object.
 * Can store functions in a variable.
 * Can pass function as an argument to another function.
 * We can return a function from a function.
+
+#### Closures
+
+* An inner function **always** has access to the variables and parameters of its outer function, even **after** the outer function has returned.
+* The scope chain always stays intact.

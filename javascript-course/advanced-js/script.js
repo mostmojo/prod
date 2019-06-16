@@ -221,3 +221,22 @@ console.log(score); // undefined because we made a private variable that only li
 })(6); // will always be true in this case because 6 is > 5, no matter if the Math.random gives anything below 5.
 
 // Purpose of this is to create a private scope 🚀
+
+// 🔺----- Closures -----🔺 //
+
+function retirement(retirementAge) {
+    var a = ' years until retirement.';
+    return function(yearOfBirth) {
+        var age = 2019 - yearOfBirth;
+        console.log((retirementAge - age) + a);
+    }
+}
+
+var retirementUS = retirement(66);
+retirementUS(1993);
+
+retirement(66)(1990);
+
+// Result:
+// 40 years left until retirement.
+// (66 - (2019 - 1993))
