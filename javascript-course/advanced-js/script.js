@@ -168,3 +168,21 @@ console.log(rates)
 1) create generic func that loops over an input array
 2) gave it a fn as input to calc something based on each element of the array
 */
+
+// 🔺----- Functions returning functions -----🔺 //
+
+function interviewQuestion(job) {
+    if (job === 'designer') {
+        return function(name) {
+            console.log(name + ', can you please explain what UX design is?');
+        }
+    } else if (job === 'teacher') {
+        return function(name) {
+            console.log('What subject do you teach,' + name + '?');
+        }
+    } else {
+        return function(name) {
+            console.log('Hello' + name + ', what do you do?');
+        }
+    }
+}
