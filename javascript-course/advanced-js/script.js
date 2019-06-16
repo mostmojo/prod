@@ -186,3 +186,14 @@ function interviewQuestion(job) {
         }
     }
 }
+
+// The var below will hold the function that relates to the teacher as boolean will be true
+var teacherQuestion = interviewQuestion('teacher');
+var designerQuestion = interviewQuestion('designer');
+
+teacherQuestion('John'); // What subject do you teach, John?
+designerQuestion('John'); // John, can you please explain what UX design is?
+designerQuestion('Jane'); // Jane, can you please explain what UX design is?
+designerQuestion('Mark'); // Mark, can you please explain what UX design is?
+
+interviewQuestion('teacher')('Mark'); // fn works from left to right, so teacher arg will replace job param, then run that anon function and insert Mark arg in name param :)
