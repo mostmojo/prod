@@ -243,6 +243,7 @@ retirementIceland(1993) // 41 years until retirement
 
 // -------------------------------------------------
 
+// Refactoring interview question to showcase closure in action
 
 function interviewQuestion(job) {
     return function(name) {
@@ -257,4 +258,30 @@ function interviewQuestion(job) {
 }
 
 interviewQuestion('surfer')('Joey');
-// Because an inner function always has access to the variables and parameters of its outer function, even after the outer function has returned, we can invoke both arguments teacher and john and watch the magic happen!
+/* Tip: Because an inner function always has access to the variables and parameters of its outer function,
+even after the outer function has returned, we can invoke both arguments teacher and john and watch the magic happen! */
+
+// 🔺----- Bind, call & apply -----🔺 //
+
+var john = {
+    name: 'John',
+    age: 26,
+    job: 'teacher',
+    presentation: function(style, timeOfDay) {
+        if (style === 'formal') {
+            console.log('Good' + timeOfDay + ', Ladies and gentlemen! I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old');
+        } else if (style === 'friendly') {
+            console.log('Hey, what\'s up? I\'m' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
+        }
+    }
+}
+
+var emily = {
+    name: 'Emily',
+    age: 35,
+    job: 'designer'
+};
+
+
+john.presentation('formal', 'morning');
+john.presentation.call(emily, 'friendly', 'afternoon'); // call method allows to set this var -> no longer john, but now emily. => Method borrowing
