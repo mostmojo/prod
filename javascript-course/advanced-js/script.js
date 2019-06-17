@@ -326,9 +326,12 @@ console.log(ages);
 console.log(fullJapan);
 
 
-
 // 🔺----- Challenge -----🔺 //
 
+/* by wrapping the whole function in an IIFE (function() {...})();, we make its scope private. That way if someone else were to use it, and he/she
+had a var called Question or n, it would not interfere. */
+
+(function() {
 // 1. Build function constructor
 function Question(question, answers, correct) {
     this.question = question;
@@ -344,6 +347,14 @@ Question.prototype.displayQuestion = function() {
     }
 }
 
+Question.prototype.checkAnswer = function(ans) {
+    if (ans === this.correct) {
+        console.log('Correct answer!');
+    } else {
+        console.log('Wrong answer, try again!');
+    }
+}
+
 // 2. Create a few questions using the constructor
 // Remember: all the `this` props will be assigned to `new` instance of Question
 var q1 = new Question('Is JavaScript the coolest programming language?', ['Yes', 'No'], 0);
@@ -355,4 +366,10 @@ var questions = [q1, q2, q3];
 
 // 4. Select a random Q and log it to the console, w/ possible answers
 var n = Math.floor(Math.random() * questions.length);
+
 questions[n].displayQuestion();
+// Use parseInt to convert ex. "2" to integer, not string - 2.
+var answer = parseInt(prompt('Please select the correct answer.'));
+
+questions[n].checkAnswer(answer);
+})();
