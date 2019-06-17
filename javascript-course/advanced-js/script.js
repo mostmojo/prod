@@ -285,3 +285,42 @@ var emily = {
 
 john.presentation('formal', 'morning');
 john.presentation.call(emily, 'friendly', 'afternoon'); // call method allows to set this var -> no longer john, but now emily. => Method borrowing
+
+// john.presentation.apply(emily, ['friendly', 'afternoon']); // apply method, receives same as call, but with array
+
+var johnFriendly = john.presentation.bind(john, 'friendly');
+johnFriendly('morning');
+johnFriendly('night');
+
+var emilyForm = john.presentation.bind(emily, 'formal');
+emilyFormal('afternoon');
+
+
+// -- use bind example -- //
+
+
+var years = [1990, 1965, 1937, 2005, 1998];
+
+// 1. this func has 2 params. Loop and grab index and callback to 2nd function to calcAge
+function arrayCalc(arr, fn) {
+    var arrResult = [];
+    for (var i = 0; i < arr.length; i++) {
+        arrResult.push(fn(arr[i]));
+    }
+    return arrResult;
+}
+
+// 2. callback func which calcs age
+function calculateAge(element) {
+    return 2016 - element;
+}
+// => 26, 51, 79, 11 , 18
+
+function isFullAge(limit, element) {
+    return element >= limit;
+}
+
+var ages = arrayCalc(years, calculateAge);
+var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20)); // with bind, we create a copy of isFullAge, function with a new age limit set to 20
+console.log(ages);
+console.log(fullJapan);
