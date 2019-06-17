@@ -404,10 +404,13 @@ had a var called Question or n, it would not interfere. */
             console.log('Wrong answer, try again!');
             sc = callback(false);
         }
+
+        this.displayScore(sc); // we have access to this cos of the prototype chain!
     }
 
     Question.prototype.displayScore = function(score) {
-
+        console.log('Your current score is:' + score);
+        console.log('------------------------------');
     }
 
 
@@ -427,7 +430,7 @@ had a var called Question or n, it would not interfere. */
             if (correct) {
                 sc++;
             }
-            return score;
+            return sc;
         }
     }
 
