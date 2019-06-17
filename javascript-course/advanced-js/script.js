@@ -395,13 +395,22 @@ had a var called Question or n, it would not interfere. */
         }
     }
 
-    Question.prototype.checkAnswer = function(ans) {
+    Question.prototype.checkAnswer = function(ans, callback) {
+        var sc;
         if (ans === this.correct) {
             console.log('Correct answer!');
+            sc = callback(true);
         } else {
             console.log('Wrong answer, try again!');
+            sc = callback(false);
         }
     }
+
+    Question.prototype.displayScore = function(score) {
+
+    }
+
+
 
     // 2. Create a few questions using the constructor
     // Remember: all the `this` props will be assigned to `new` instance of Question
@@ -412,6 +421,18 @@ had a var called Question or n, it would not interfere. */
     // 3. Store them all in an array
     var questions = [q1, q2, q3];
 
+    function score() {
+        var sc = 0;
+        return function(correct) {
+            if (correct) {
+                sc++;
+            }
+            return score;
+        }
+    }
+
+    var keepScore = score;
+
     // 4. Select a random Q and log it to the console, w/ possible answers
     function nextQuestion() {
         var n = Math.floor(Math.random() * questions.length);
@@ -421,7 +442,7 @@ had a var called Question or n, it would not interfere. */
         var answer = prompt('Please select the correct answer.');
 
         if (answer !== 'exit') {
-            questions[n].checkAnswer(parseInt(answer));
+            questions[n].checkAnswer(parseInt(answer), keepScore);
             nextQuestion();
         }
     }
