@@ -248,13 +248,13 @@ function interviewQuestion(job) {
     return function(name) {
         if (job === 'designer') {
             console.log(name + ', can you please explain what UX design is?');
-        } else if (job === 'teacher') {
-            console.log('What subject do you teach,' + name + '?');
+        } else if (job === 'surfer') {
+            console.log('Where is the best place to surf,' + name + '?');
         } else {
             console.log('Hello' + name + ', what do you do?');
         }
     }
 }
 
-interviewQuestion('teacher')('John');
+interviewQuestion('surfer')('Joey');
 // Because an inner function always has access to the variables and parameters of its outer function, even after the outer function has returned, we can invoke both arguments teacher and john and watch the magic happen!
