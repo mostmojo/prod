@@ -324,3 +324,21 @@ var ages = arrayCalc(years, calculateAge);
 var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20)); // with bind, we create a copy of isFullAge, function with a new age limit set to 20
 console.log(ages);
 console.log(fullJapan);
+
+
+
+// 🔺----- Challenge -----🔺 //
+
+// 1. build function constructor
+
+function Question(question, answers, correct) {
+    this.question = question;
+    this.answers = answers;
+    this.correct = correct;
+}
+// Remember: all the `this` props will be assigned to `new` instance of Question
+var q1 = new Question('Is JavaScript the coolest programming language?',                    ['Yes', 'No'], 0);
+var q2 = new Question('What is the name of this course\'s teacher?',                    ['John', 'Micheal', 'Jonas'], 2);
+var q3 = new Question('What best describes coding?',                    ['Boring', 'Hard', 'Fun', 'Tedious'], 2);
+
+
