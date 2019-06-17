@@ -224,16 +224,16 @@ console.log(score); // undefined because we made a private variable that only li
 
 // 🔺----- Closures -----🔺 //
 
-function retirement(retirementAge) {
-    var a = ' years until retirement.';
-    return function(yearOfBirth) {
+function retirement(retirementAge) { // this function - as parent - holds retirementAge (differs per country)
+    var a = ' years until retirement.'; // var a stores this string to reuse
+    return function(yearOfBirth) { // anon fn takes yearOfBirth param and calculates age
         var age = 2019 - yearOfBirth;
-        console.log((retirementAge - age) + a);
+        console.log((retirementAge - age) + a); // anon fn lives inside its parent fn and can access the retirementAge parameter - magic!
     }
 }
 
-var retirementUS = retirement(66);
-retirementUS(1993); // 40 years until retirement
+var retirementUS = retirement(66); // take retirementAge - 66 in this case - and store it in memory, in a var retirementUS
+retirementUS(1993); // 40 years until retirement  => logs 40yrs as can access retirementAge from parent!
 
 var retirementGermany = retirement(65);
 retirementGermany(1993) // 39 years until retirement
