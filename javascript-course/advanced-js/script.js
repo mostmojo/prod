@@ -373,3 +373,57 @@ var answer = parseInt(prompt('Please select the correct answer.'));
 
 questions[n].checkAnswer(answer);
 })();
+
+// 🔺---------- Challenge (EXPERT LEVEL) ----------🔺 //
+
+/* by wrapping the whole function in an IIFE (function() {...})();, we make its scope private. That way if someone else were to use it, and he/she
+had a var called Question or n, it would not interfere. */
+
+(function() {
+    // 1. Build function constructor
+    function Question(question, answers, correct) {
+        this.question = question;
+        this.answers = answers; // Data structure: Array
+        this.correct = correct;
+    }
+
+    Question.prototype.displayQuestion = function() {
+        console.log(this.question);
+
+        for (var i = 0; i < this.answers.length; i++) {
+            console.log(i + ': ' + this.answers[i]);
+        }
+    }
+
+    Question.prototype.checkAnswer = function(ans) {
+        if (ans === this.correct) {
+            console.log('Correct answer!');
+        } else {
+            console.log('Wrong answer, try again!');
+        }
+    }
+
+    // 2. Create a few questions using the constructor
+    // Remember: all the `this` props will be assigned to `new` instance of Question
+    var q1 = new Question('Is JavaScript the coolest programming language?', ['Yes', 'No'], 0);
+    var q2 = new Question('What is the name of this course\'s teacher?', ['John', 'Micheal', 'Jonas'], 2);
+    var q3 = new Question('What best describes coding?', ['Boring', 'Hard', 'Fun', 'Tedious'], 2);
+
+    // 3. Store them all in an array
+    var questions = [q1, q2, q3];
+
+    // 4. Select a random Q and log it to the console, w/ possible answers
+    function nextQuestion() {
+        var n = Math.floor(Math.random() * questions.length);
+
+        questions[n].displayQuestion();
+        // Use parseInt to convert ex. "2" to integer, not string - 2.
+        var answer = prompt('Please select the correct answer.');
+
+        if (answer !== 'exit') {
+            questions[n].checkAnswer(parseInt(answer));
+            nextQuestion();
+        }
+    }
+    nextQuestion();
+    })();
