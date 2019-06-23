@@ -11,3 +11,7 @@
 * Spread Operator
 * Classes and subclasses
 * Rest and default parameters
+
+-----
+
+* Variables in ES5 `var` are **function** scoped, whereas in ES6 `const` & `let` are **block** scoped.
