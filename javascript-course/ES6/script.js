@@ -41,5 +41,23 @@ let i = 23;
 for(let i = 0; i < 5; i++) {
     console.log(i); // 0 1 2 3 4
 }
-
 console.log(i); // 23 -> as outer i is global scope and inner i is block scope
+
+// --- Lecture: Blocks and IIFEs --- 🔸
+
+//ES6
+{
+    const a = 1;
+    let b = 2;
+}
+
+console.log(a + b); // Error: a is not defined -> because the vars are block scoped
+// However, if we add a var c = 3 in the block scope above, it would still render it in the console because vars are NOT block scoped, they're function scoped.
+
+// ES5
+(function() {
+    var c = 3;
+})();
+
+console.log(c); // Error: c is not defined because this IIFE is enclosed in () so it's private.
+// This whole thing is exactly the same as using curly braces in ES6.
