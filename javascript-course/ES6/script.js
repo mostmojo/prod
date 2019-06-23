@@ -13,12 +13,23 @@ let age6 = 23;
 // console.log(name6); // error: asignment to constant variable - it's immutable! Use let :)
 
 // ES5
-function driversLicence(passedTest) {
+function driversLicence5(passedTest) {
     if (passedTest) {
         var firstName = 'John';
         var yearOfBirth = 1990;
-
-        console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.');
     }
+    console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.'); // this works because the console.log is within the driversLicence5 function scope.
 }
-driversLicence(true);
+driversLicence5(true);
+
+// ES6
+driversLicence6 = (passedTest) => {
+    if (passedTest) {
+        let firstName = 'John';
+        const yearOfBirth = 1990;
+    }
+    // console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.');
+}
+driversLicence6(true);
+
+// ☝ Uncaught ReferenceError: firstName is not defined at driversLicence6 (script.js:31) at script.js:33. The console.log'd variables (const and let) HAVE to be inside the curly braces, in BLOCK scope.
