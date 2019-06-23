@@ -24,6 +24,8 @@ driversLicence5(true);
 
 // ES6
 driversLicence6 = (passedTest) => {
+
+    // console.log(firstName) // Error, hoisting won't work because trying to access a variable before it's declared doesn't work
     if (passedTest) {
         let firstName = 'John';
         const yearOfBirth = 1990;
@@ -33,3 +35,11 @@ driversLicence6 = (passedTest) => {
 driversLicence6(true);
 
 // ☝ Uncaught ReferenceError: firstName is not defined at driversLicence6 (script.js:31) at script.js:33. The console.log'd variables (const and let) HAVE to be inside the curly braces, in BLOCK scope.
+
+
+let i = 23;
+for(let i = 0; i < 5; i++) {
+    console.log(i); // 0 1 2 3 4
+}
+
+console.log(i); // 23 -> as outer i is global scope and inner i is block scope

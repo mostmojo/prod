@@ -15,3 +15,4 @@
 -----
 
 * Variables in ES5 `var` are **function** scoped, whereas in ES6 `const` & `let` are **block** scoped.
+* We can only use a variable once it's been declared and defined.
