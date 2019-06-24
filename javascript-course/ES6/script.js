@@ -236,3 +236,13 @@ function calcAgeRetirement(year) {
 const [age2, retirement] = calcAgeRetirement(1990);
 console.log(age2); // 29
 console.log(retirement); // 36
+
+// 🔸 --- Lecture: Arrays --- 🔸
+const boxes = document.querySelectorAll('.box');
+
+// ES5
+var boxesArr5 =
+Array.prototype.slice.call(boxes);
+boxesArr5.forEach(function(box){
+    box.style.backgroundColor = 'dodgerblue';
+});
