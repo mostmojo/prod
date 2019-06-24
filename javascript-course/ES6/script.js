@@ -184,7 +184,7 @@ Person.prototype.myFriends5 =
 
         var arr = friends.map(function(friend) { // anon func points to window object
             return this.name + ' is friends with ' + friend;
-            console.log(arr);
+            // console.log(arr);
         }.bind(this)); // manually bind this (John instance)
         console.log(arr);
     }
@@ -201,3 +201,38 @@ Person.prototype.myFriends6 =
     }
 
 new Person('Mike').myFriends6(friends);
+
+// 🔸 --- Lecture: Destructuring --- 🔸
+console.log('----------------');
+// ES5
+
+var john = ['John', 26];
+// var name = john[0];
+// var age = john[1];
+
+// ES6
+const [name, age] = ['John', 26];
+console.log(name);
+console.log(age);
+
+const obj = {
+    fName: 'John',
+    lName: 'Smith'
+};
+
+const {fName, lName} = obj; // object's params HAVE to match obj keys
+console.log(fName);
+console.log(lName);
+
+const {fName: a, lName: b} = obj; // reassign key names to different names
+console.log(a); // John
+console.log(b); // Smith
+
+function calcAgeRetirement(year) {
+    const age = new Date().getFullYear() - year;
+    return [age, 65 - age];
+}
+
+const [age2, retirement] = calcAgeRetirement(1990);
+console.log(age2); // 29
+console.log(retirement); // 36
