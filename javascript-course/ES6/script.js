@@ -81,4 +81,6 @@ console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. To
 const n = `${firstName} ${lastName}`;
 console.log(n.startsWith('J')); // true
 console.log(n.startsWith('j')); // false
-console.log(n.endsWith('ds')); // false
+console.log(n.endsWith('ds')); // true
+console.log(n.includes('and')); // true
+
