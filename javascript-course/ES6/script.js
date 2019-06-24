@@ -137,3 +137,39 @@ Thus, color and position are undefined in global window scope, as they only live
 By declaring this to var self, it can be referenced inside the var box5 object's scope even as a callback. Small hack!🤓
 */
 
+// ES6
+
+const box6 = {
+    color: 'green',
+    position: 1,
+    clickMe: function() {
+
+        document.querySelector('.green').addEventListener('click', () => {
+            var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+            alert(str);
+        });
+    }
+}
+box6.clickMe();
+
+/* Function above shares the this keyword with it's surroundings - it's LEXICAL.
+ So, it points to the box6 object */
+
+// ---------------------------------------
+
+/*
+const box66 = {
+    color: 'green',
+    position: 1,
+    clickMe: () => {
+
+        document.querySelector('.green').addEventListener('click', () => {
+            var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+            alert(str);
+        });
+    }
+}
+box66.clickMe();
+
+This renders undefined because `clickMe: () =>` points the the global window object and not the box66 function anymore.
+*/
