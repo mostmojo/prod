@@ -178,15 +178,26 @@ function Person(name) {
     this.name = name;
 }
 
-// ES 5
-Person.prototype.myFriends5 = function(friends) {
+// ES5
+Person.prototype.myFriends5 =
+    function(friends) {
 
-    var arr = friends.map(function(el) { // anon func points to window object
-        return this.name + ' is friends with ' + el;
+        var arr = friends.map(function(el) { // anon func points to window object
+            return this.name + ' is friends with ' + el;
+            console.log(arr);
+        }.bind(this)); // manually bind this (John instance)
         console.log(arr);
-    }.bind(this)); // manually bind this (John instance)
-    console.log(arr);
-}
+    }
 
 var friends = ['Bob', 'Jane', 'Mark'];
 new Person('John').myFriends5(friends);
+
+// ES6
+Person.prototype.myFriends6 =
+    function(friends) {
+
+        let arr = friends.map(el => `${this.name} is friends with ${el}`);
+            console.log(arr);
+    }
+
+new Person('Mike').myFriends6(friends);
