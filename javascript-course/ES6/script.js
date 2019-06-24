@@ -82,5 +82,34 @@ const n = `${firstName} ${lastName}`;
 console.log(n.startsWith('J')); // true
 console.log(n.startsWith('j')); // false
 console.log(n.endsWith('ds')); // true
-console.log(n.includes('and')); // true
+console.log(n.includes(' ')); // true
+console.log(`${firstName} `.repeat(5)); // add the space inside the backticks
 
+// 🔸 --- Lecture: Arrow functions --- 🔸
+
+const years = [1990, 1965, 1982, 1937];
+
+// ES5
+var ages5 = years.map(function(el) {
+    return 2019 - el;
+});
+console.log(ages5); // 2019 - 1990, 2019 - 1965, etc.
+
+// ES6
+
+let ages6 = years.map(el => 2019 - el); // when one single line, no need for curly braces and return keyword
+console.log(ages6);
+
+ages6 = years.map((el, index) => `Age element ${index + 1}: ${2019 - el}.`); // Age element 1: 29, etc
+console.log(ages6);
+
+ages6 = years.map((el, index) => {
+    const now = new Date().getFullYear();
+    const age = now - el;
+    return `Age element ${index + 1}: ${age}.`; // Age element 1: 29, etc
+});
+console.log(ages6); // when more than two lines, curly braces and return needed
+
+/* iterate through years array, create new array
+for each element in years array, today's date - el(the year)
+return index of array + 1 because zero-based and the age */
