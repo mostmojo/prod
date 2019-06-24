@@ -238,11 +238,15 @@ console.log(age2); // 29
 console.log(retirement); // 36
 
 // 🔸 --- Lecture: Arrays --- 🔸
-const boxes = document.querySelectorAll('.box');
+const boxes =
+document.querySelectorAll('.box');
 
 // ES5
-var boxesArr5 =
-Array.prototype.slice.call(boxes);
-boxesArr5.forEach(function(box){
-    box.style.backgroundColor = 'dodgerblue';
-});
+// var boxesArr5 =
+// Array.prototype.slice.call(boxes);
+// boxesArr5.forEach(function(box){
+//     box.style.backgroundColor = 'dodgerblue';
+// });
+
+//ES6 -> Transform nodelist in const boxes to an array!
+Array.from(boxes).forEach(box => box.style.backgroundColor = 'dodgerblue');
