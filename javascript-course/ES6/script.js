@@ -97,10 +97,10 @@ console.log(ages5); // 2019 - 1990, 2019 - 1965, etc.
 
 // ES6
 
-let ages6 = years.map(el => 2019 - el); // when one single line, no need for curly braces and return keyword
+let ages6 = years.map(el => 2019 - el); // when one single line, no need for curly braces {} or normal braces () and return keyword
 console.log(ages6);
 
-ages6 = years.map((el, index) => `Age element ${index + 1}: ${2019 - el}.`); // Age element 1: 29, etc
+ages6 = years.map((el, index) => `Age element ${index + 1}: ${2019 - el}.`); // Age element 1: 29, etc // when 2 parameters, add braces ()
 console.log(ages6);
 
 ages6 = years.map((el, index) => {
@@ -112,4 +112,5 @@ console.log(ages6); // when more than two lines, curly braces and return needed
 
 /* iterate through years array, create new array
 for each element in years array, today's date - el(the year)
-return index of array + 1 because zero-based and the age */
+return index of array + 1 because zero-based & age */
+
