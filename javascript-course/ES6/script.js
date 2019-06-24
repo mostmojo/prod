@@ -72,8 +72,13 @@ function calcAge(year) {
     return 2019 - year;
 }
 
-// ES5
+// ES5 - long!
 console.log('This is ' + firstName + ' ' + lastName + '. He was born in ' + yearOfBirth + '. Today he is ' + calcAge(yearOfBirth) + ' years old.');
 
 // ES6 - Template literals
-console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. Today he is ${calcAge(yearOfBirth)} years old.`)
+console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. Today he is ${calcAge(yearOfBirth)} years old.`);
+
+const n = `${firstName} ${lastName}`;
+console.log(n.startsWith('J')); // true
+console.log(n.startsWith('j')); // false
+console.log(n.endsWith('ds')); // false
