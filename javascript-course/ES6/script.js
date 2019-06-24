@@ -114,3 +114,26 @@ console.log(ages6); // when more than two lines, curly braces and return needed
 for each element in years array, today's date - el(the year)
 return index of array + 1 because zero-based & age */
 
+// 🔸 --- Lecture: Arrow functions II --- 🔸
+
+// ES5
+
+var box5 = {
+    color: 'green',
+    position: 1,
+    clickMe: function() {
+        var self = this;
+        document.querySelector('.green').addEventListener('click', function() {
+            var str = 'This is box number ' + self.position + ' and it is ' + self.color;
+            alert(str);
+        });
+    }
+}
+box5.clickMe();
+
+/*
+without var self = this, we get undefined error because a callback function refers to global window object and not the box5 object's scope.
+Thus, color and position are undefined in global window scope, as they only live inside var box5 scope.
+By declaring this to var self, it can be referenced inside the var box5 object's scope even as a callback. Small hack!🤓
+*/
+

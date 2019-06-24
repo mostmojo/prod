@@ -34,5 +34,5 @@ let age = years.map((el, index) => {
     let age = now - el;
     return `Age elem: ${index + 1}: ${age}`;
 });
-
  ```
+* Arrow functions don't get their own `this` keyword. They use the `this` keyword of the function they are written in &rarr; `lexical this`.
