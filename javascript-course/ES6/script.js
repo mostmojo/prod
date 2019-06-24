@@ -90,22 +90,22 @@ console.log(`${firstName} `.repeat(5)); // add the space inside the backticks
 const years = [1990, 1965, 1982, 1937];
 
 // ES5
-var ages5 = years.map(function(el) {
-    return 2019 - el;
+var ages5 = years.map(function(year) {
+    return 2019 - year;
 });
 console.log(ages5); // 2019 - 1990, 2019 - 1965, etc.
 
 // ES6
 
-let ages6 = years.map(el => 2019 - el); // when one single line, no need for curly braces {} or normal braces () and return keyword
+let ages6 = years.map(year => 2019 - year); // when one single line, no need for curly braces {} or normal braces () and return keyword
 console.log(ages6);
 
-ages6 = years.map((el, index) => `Age element ${index + 1}: ${2019 - el}.`); // Age element 1: 29, etc // when 2 parameters, add braces ()
+ages6 = years.map((year, index) => `Age element ${index + 1}: ${2019 - year}.`); // Age element 1: 29, etc // when 2 parameters, add braces ()
 console.log(ages6);
 
-ages6 = years.map((el, index) => {
+ages6 = years.map((year, index) => {
     const now = new Date().getFullYear();
-    const age = now - el;
+    const age = now - year;
     return `Age element ${index + 1}: ${age}.`; // Age element 1: 29, etc
 });
 console.log(ages6); // when more than two lines, curly braces and return needed
@@ -182,8 +182,8 @@ function Person(name) {
 Person.prototype.myFriends5 =
     function(friends) {
 
-        var arr = friends.map(function(el) { // anon func points to window object
-            return this.name + ' is friends with ' + el;
+        var arr = friends.map(function(friend) { // anon func points to window object
+            return this.name + ' is friends with ' + friend;
             console.log(arr);
         }.bind(this)); // manually bind this (John instance)
         console.log(arr);
@@ -196,7 +196,7 @@ new Person('John').myFriends5(friends);
 Person.prototype.myFriends6 =
     function(friends) {
 
-        let arr = friends.map(el => `${this.name} is friends with ${el}`);
+        let arr = friends.map(friend => `${this.name} is friends with ${friend}`);
             console.log(arr);
     }
 
