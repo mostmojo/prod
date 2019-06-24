@@ -152,10 +152,10 @@ const box6 = {
 }
 box6.clickMe();
 
-/* Function above shares the this keyword with it's surroundings - it's LEXICAL.
+/* Function above shares the `this` keyword with it's surroundings - it's LEXICAL.
  So, it points to the box6 object */
 
-// ---------------------------------------
+// ~~~~~~~~~~~~~~~~~~~~~
 
 /*
 const box66 = {
@@ -173,3 +173,20 @@ box66.clickMe();
 
 This renders undefined because `clickMe: () =>` points the the global window object and not the box66 function anymore.
 */
+
+function Person(name) {
+    this.name = name;
+}
+
+// ES 5
+Person.prototype.myFriends5 = function(friends) {
+
+    var arr = friends.map(function(el) { // anon func points to window object
+        return this.name + ' is friends with ' + el;
+        console.log(arr);
+    }.bind(this)); // manually bind this (John instance)
+    console.log(arr);
+}
+
+var friends = ['Bob', 'Jane', 'Mark'];
+new Person('John').myFriends5(friends);

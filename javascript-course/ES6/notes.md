@@ -35,4 +35,4 @@ let age = years.map((el, index) => {
     return `Age elem: ${index + 1}: ${age}`;
 });
  ```
-* Arrow functions don't get their own `this` keyword. They use the `this` keyword of the function they are written in &rarr; `lexical this`.
+* Arrow functions don't get their own `this` keyword. They use the `this` keyword of the function they are written in &rarr; `lexical this`. [More info](https://hackernoon.com/javascript-es6-arrow-functions-and-lexical-this-f2a3e2a5e8c4).
