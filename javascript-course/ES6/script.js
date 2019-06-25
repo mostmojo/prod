@@ -357,3 +357,35 @@ function isFullAge6(limit, ...years) {
 
 isFullAge5(21, 1990, 2005, 1965, 2019, 1987); // can add an indefinite amount of arguments to the array
 // by assigning a limit as a parameter to the isFullAge6 function, and then the limit into the argument array - it works!
+
+// 🔸 --- Lecture: Default parameters --- 🔸
+
+// ES5
+function smithPerson(firstName, yearOfBirth, lastName, nationality) {
+
+    lastName === undefined ? lastName = 'Smith' : lastName = lastName;
+    nationality === undefined ? nationality = 'American' : nationality = nationality;
+
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.yearOfBirth = yearOfBirth;
+    this.nationality = nationality;
+}
+
+var john = new smithPerson('John', 1990);
+// smithPerson {firstName: "John", lastName: undefined, yearOfBirth: 1990, nationality: undefined};
+// when we set default parms they replace undefined with what is set. 👇🏼
+
+var joanna = new smithPerson('Joanna', 2006, 'Diaz', 'Spanish');
+
+// ES6
+function smithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = 'American') {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.yearOfBirth = yearOfBirth;
+    this.nationality = nationality;
+}
+
+var joe = new smithPerson('Joe', 1940);
+var beca = new smithPerson('Beca', 1998, 'Stevens', 'Dutch');
+
