@@ -262,10 +262,20 @@ for(var i = 0; i < boxesArr5.length; i++) {
 }
 */
 
-// ES6
+// ES6 - of w/ string method includes
 for(const box of boxesArr6) {
     if (box.className.includes('blue')) {
         continue;
     }
     box.textContent = 'I changed to blue!';
 }
+
+// ES5
+var ages = [12, 17, 8, 21, 14, 11];
+
+var full = ages.map(function(age) {
+ return age >= 18;
+});
+console.log(full);
+console.log(full.indexOf(true)); // 3
+console.log(ages[full.indexOf(true)]); // 21
