@@ -55,3 +55,7 @@ let age = years.map((el, index) => {
 * `REST params` have identical notation to `spreads`, but they allow an indefinite amount of arguments in an array.
 * **Rest parameter**: collects all remaining elements into an array. **Spread operator:** allows iterables( arrays / objects / strings ) to be expanded into single arguments/elements.
 * We simply add a limit parameter into the  REST Parameter function, and include the argument when the array is called with it's arguments. Ex. `(limit, ...years)` and then [21, 1990, 2005, 2012, 1993];` Where 21 is the limit works fine.
+
+* **Default Params**: set default values as parameters in a function for ex. `function newGuy (fName, lName = 'Jackson', age) {...}`
+
+* **Maps / hash maps** : creating a `new Map()` and setting values with `key value` pairs. can use .`size` to check `length`, `has` to see if key is present and `delete` to get rid of a k:v.
