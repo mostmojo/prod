@@ -407,5 +407,21 @@ console.log(question.get(false));
 console.log(question.size); // the .length equivalent of maps
 
 if (question.has(4)) {
-    question.delete(4);
+    // question.delete(4);
+    console.log('answer 4 is here');
 }
+
+// question.clear(); // clears the whole map
+
+// question.forEach((value, key) =>
+// console.log(`This is ${key}, and it's value set to ${value}`));
+
+for (let [key, value] of question.entries()) {
+    if (typeof(key) === 'number') {
+        console.log(`Answer ${key}: ${value}`);
+    }
+}
+
+const ans = parseInt(prompt('Write the correct answer'));
+console.log(question.get(ans === question.get('correct')));
+
