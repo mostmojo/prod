@@ -37,11 +37,11 @@ driversLicence6(true);
 // ☝ Uncaught ReferenceError: firstName is not defined at driversLicence6 (script.js:31) at script.js:33. The console.log'd variables (const and let) HAVE to be inside the curly braces, in BLOCK scope.
 
 
-let i = 23;
-for(let i = 0; i < 5; i++) {
-    console.log(i); // 0 1 2 3 4
-}
-console.log(i); // 23 -> as outer i is global scope and inner i is block scope
+// let i = 23;
+// for(let i = 0; i < 5; i++) {
+//     console.log(i); // 0 1 2 3 4
+// }
+// console.log(i); // 23 -> as outer i is global scope and inner i is block scope
 
 // 🔸 --- Lecture: Blocks and IIFEs --- 🔸
 
@@ -241,12 +241,20 @@ console.log(retirement); // 36
 const boxes =
 document.querySelectorAll('.box');
 
-// ES5
-// var boxesArr5 =
-// Array.prototype.slice.call(boxes);
-// boxesArr5.forEach(function(box){
-//     box.style.backgroundColor = 'dodgerblue';
-// });
+//ES5
+var boxesArr5 =
+Array.prototype.slice.call(boxes);
+boxesArr5.forEach(function(box){
+    box.style.backgroundColor = 'dodgerblue';
+});
 
 //ES6 -> Transform nodelist in const boxes to an array!
 Array.from(boxes).forEach(box => box.style.backgroundColor = 'dodgerblue');
+
+// ES5 - loop through boxes, if class has 'blue' in HTML, skip and keep going, else add text 'i changed to blue'
+for(var i = 0; i < boxesArr5.length; i++) {
+    if(boxesArr5[i].className ===  'box blue') {
+        continue;
+    }
+    boxesArr5[i].textContent = 'I changed to blue!';
+}
