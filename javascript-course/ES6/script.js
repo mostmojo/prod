@@ -298,6 +298,12 @@ var sum2 = addFourAges.apply(null, ages); // null = this variable. Take that arr
 console.log('~~~~~');
 console.log(sum2);
 
-// ES6
-const max3 = addFourAges(...ages);
-console.log(max3);
+// ES6 - SPREAD
+const sum3 = addFourAges(...ages);
+console.log(sum3);
+
+// Another usecase of Spread
+const familySmith = ['John', 'Jane', 'Mark'];
+const familyMiller = ['Mary', 'Bob', 'Ann'];
+const bigFamily = [...familySmith, 'Lily', 'Napoleon', ...familyMiller]; // fuses both with spread, and new values can be added in between
+console.log(bigFamily);
