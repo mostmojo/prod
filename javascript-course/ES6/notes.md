@@ -37,6 +37,10 @@ let age = years.map((el, index) => {
  ```
 * Arrow functions don't get their own `this` keyword. They use the `this` keyword of the function they are written in &rarr; `lexical this`. [More info](https://hackernoon.com/javascript-es6-arrow-functions-and-lexical-this-f2a3e2a5e8c4).
 
+-----
+
+## Section notes
+
 * When using the `map` function - using **plural** vs **singular** parameters can make it easier to comprehend. Ex. `let arr = friends.map(friend => ${this.name} is friends with ${friend});`
 
 * If we want to use `break` or `continue` statements in a loop, we cannot use `forEach` and `map`. So, `for loops` are necessary.
@@ -44,3 +48,5 @@ let age = years.map((el, index) => {
 * `Break` - break the iteration of the loop and won't continue on.
 * `for...of` is used when we want to have `continue` or `break` inside a for loop. Then we can use the method `includes('blue')` to check and continue or break.
 * ES6 methods: `find` & `findIndex` are also shorthand for finding an element's index or the element itself.
+* `apply()` - calls a function w/ a given `this` value, and arguments provided as an array. Identical to `call()` but w/ array args. `addFourAges.apply(null,ages);`
+* **Spread** - uses `...` syntax to substitute values in an array. Shorthand. `const max = addFourAges(...ages);`

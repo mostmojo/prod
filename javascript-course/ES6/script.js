@@ -283,3 +283,21 @@ console.log(ages[full.indexOf(true)]); // 21
 // ES6
 console.log(ages.findIndex(age => age >= 18)); // 3
 console.log(ages.find(age => age >= 18)); // 21
+
+// 🔸 --- Lecture: Spread operator --- 🔸
+function addFourAges (a, b, c, d) {
+    return a + b + c + d;
+}
+
+var sum1 = addFourAges(18, 30, 12, 21);
+console.log(sum1);
+
+// ES5
+var ages = [18, 30, 12, 21];
+var sum2 = addFourAges.apply(null, ages); // null = this variable. Take that array and call
+console.log('~~~~~');
+console.log(sum2);
+
+// ES6
+const max3 = addFourAges(...ages);
+console.log(max3);
