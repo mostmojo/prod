@@ -50,3 +50,5 @@ let age = years.map((el, index) => {
 * ES6 methods: `find` & `findIndex` are also shorthand for finding an element's index or the element itself.
 * `apply()` - calls a function w/ a given `this` value, and arguments provided as an array. Identical to `call()` but w/ array args. `addFourAges.apply(null,ages);`
 * **Spread** - uses `...` syntax to substitute values in an array. Shorthand. `const max = addFourAges(...ages);`
+* `Array.from(xs);` - converts nodeList into an array. Once converted, we can iterate with forEach.
+* `Array.from(xs).forEach(x => x.style.color = 'red');`

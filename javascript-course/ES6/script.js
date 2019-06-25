@@ -307,3 +307,11 @@ const familySmith = ['John', 'Jane', 'Mark'];
 const familyMiller = ['Mary', 'Bob', 'Ann'];
 const bigFamily = [...familySmith, 'Lily', 'Napoleon', ...familyMiller]; // fuses both with spread, and new values can be added in between
 console.log(bigFamily);
+
+// Fusing nodeLists with spread
+const h = document.querySelector('h1'); // node
+const b0xes = document.querySelectorAll('.box'); // nodeList that can be expanded with spread
+const all = [h, ...b0xes];
+
+Array.from(all); // converts nodeList into an array
+Array.from(all).forEach(node => node.style.color = 'lightblue');
