@@ -284,7 +284,7 @@ console.log(ages[full.indexOf(true)]); // 21
 console.log(ages.findIndex(age => age >= 18)); // 3
 console.log(ages.find(age => age >= 18)); // 21
 
-// 🔸 --- Lecture: Spread operator --- 🔸
+// 🔸 --- Lecture: Spread operator --- 🔸 -- allows iterables (arrays, objs, etc) to be expanded into single elements or args
 function addFourAges (a, b, c, d) {
     return a + b + c + d;
 }
@@ -302,7 +302,7 @@ console.log(sum2);
 const sum3 = addFourAges(...ages);
 console.log(sum3);
 
-// Another usecase of Spread
+// Another usecase of Spread - EXPANDING TWO SEPARATE ARRAYS INTO ONE
 const familySmith = ['John', 'Jane', 'Mark'];
 const familyMiller = ['Mary', 'Bob', 'Ann'];
 const bigFamily = [...familySmith, 'Lily', 'Napoleon', ...familyMiller]; // fuses both with spread, and new values can be added in between
@@ -316,9 +316,9 @@ const all = [h, ...b0xes];
 Array.from(all); // converts nodeList into an array
 Array.from(all).forEach(node => node.style.color = 'lightblue');
 
-// 🔸 --- Lecture: REST parameters --- 🔸
+// 🔸 --- Lecture: REST parameters --- 🔸 - collect all remaining elements into an array
 
-// ES5
+/* ES5
 function isFullAge5() {
     // console.log(arguments); // Array-like structure, but NOT an array
     var argsArray = Array.prototype.slice.call(arguments); // To convert it into an array the ES5 way
@@ -330,9 +330,30 @@ function isFullAge5() {
 // isFullAge5(1990, 2005, 1965);
 // isFullAge5(1990, 2005, 1965, 1967, 2003);
 
-// ES6
+// ES6 - COLLECT ALL ELEMENTS INTO ONE ARRAY (inifinite amount possible)
 function isFullAge6(...years) {
     years.forEach(year => console.log((2019 - year) >= 18)); // t f t
 }
 
 isFullAge5(1990, 2005, 1965, 2019, 1987); // can add an indefinite amount of arguments to the array
+*/
+console.log('-x-x-x-x');
+// ES5
+function isFullAge5(limit) {
+    // console.log(arguments); // Array-like structure, but NOT an array
+    var argsArray = Array.prototype.slice.call(arguments, 1); // To convert it into an array the ES5 way. Only at position 1 will it take action. So, first arg is excluded.
+    argsArray.forEach(function(arg) {
+        console.log((2019 - arg) >= limit);
+    })
+}
+
+// isFullAge5(16, 1990, 2005, 1965);
+// isFullAge5(1990, 2005, 1965, 1967, 2003);
+
+// ES6 - COLLECT ALL ELEMENTS INTO ONE ARRAY (inifinite amount possible)
+function isFullAge6(limit, ...years) {
+    years.forEach(year => console.log((2019 - year) >= limit)); // t f t
+}
+
+isFullAge5(21, 1990, 2005, 1965, 2019, 1987); // can add an indefinite amount of arguments to the array
+// by assigning a limit as a parameter to the isFullAge6 function, and then the limit into the argument array - it works!

@@ -52,3 +52,6 @@ let age = years.map((el, index) => {
 * **Spread** - uses `...` syntax to substitute values in an array. Shorthand. `const max = addFourAges(...ages);`
 * `Array.from(xs);` - converts nodeList into an array. Once converted, we can iterate with forEach. (ES6). || `Array.prototype.slice.call(x)` in ES5.
 * `Array.from(xs).forEach(x => x.style.color = 'red');`
+* `REST params` have identical notation to `spreads`, but they allow an indefinite amount of arguments in an array.
+* **Rest parameter**: collects all remaining elements into an array. **Spread operator:** allows iterables( arrays / objects / strings ) to be expanded into single arguments/elements.
+* We simply add a limit parameter into the  REST Parameter function, and include the argument when the array is called with it's arguments. Ex. `(limit, ...years)` and then [21, 1990, 2005, 2012, 1993];` Where 21 is the limit works fine.
