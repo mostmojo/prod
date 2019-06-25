@@ -42,3 +42,5 @@ let age = years.map((el, index) => {
 * If we want to use `break` or `continue` statements in a loop, we cannot use `forEach` and `map`. So, `for loops` are necessary.
 * `Continue` - skip the iteration of the loop and go to the next one.
 * `Break` - break the iteration of the loop and won't continue on.
+* `for...of` is used when we want to have `continue` or `break` inside a for loop. Then we can use the method `includes('blue')` to check and continue or break.
+* ES6 methods: `find` & `findIndex` are also shorthand for finding an element's index or the element itself.

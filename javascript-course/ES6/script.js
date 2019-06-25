@@ -281,5 +281,5 @@ console.log(full.indexOf(true)); // 3
 console.log(ages[full.indexOf(true)]); // 21
 
 // ES6
-console.log(ages.findIndex(age => age >= 18));
-console.log(ages.find(age => age >= 18));
+console.log(ages.findIndex(age => age >= 18)); // 3
+console.log(ages.find(age => age >= 18)); // 21
