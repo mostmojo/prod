@@ -315,3 +315,24 @@ const all = [h, ...b0xes];
 
 Array.from(all); // converts nodeList into an array
 Array.from(all).forEach(node => node.style.color = 'lightblue');
+
+// 🔸 --- Lecture: REST parameters --- 🔸
+
+// ES5
+function isFullAge5() {
+    // console.log(arguments); // Array-like structure, but NOT an array
+    var argsArray = Array.prototype.slice.call(arguments); // To convert it into an array the ES5 way
+    argsArray.forEach(function(arg) {
+        console.log((2019 - arg) >= 18);
+    })
+}
+
+// isFullAge5(1990, 2005, 1965);
+// isFullAge5(1990, 2005, 1965, 1967, 2003);
+
+// ES6
+function isFullAge6(...years) {
+    years.forEach(year => console.log((2019 - year) >= 18)); // t f t
+}
+
+isFullAge5(1990, 2005, 1965, 2019, 1987); // can add an indefinite amount of arguments to the array
