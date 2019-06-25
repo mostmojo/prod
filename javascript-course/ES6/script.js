@@ -249,12 +249,23 @@ boxesArr5.forEach(function(box){
 });
 
 //ES6 -> Transform nodelist in const boxes to an array!
+const boxesArr6 = Array.from(boxes);
 Array.from(boxes).forEach(box => box.style.backgroundColor = 'dodgerblue');
 
 // ES5 - loop through boxes, if class has 'blue' in HTML, skip and keep going, else add text 'i changed to blue'
+/*
 for(var i = 0; i < boxesArr5.length; i++) {
     if(boxesArr5[i].className ===  'box blue') {
         continue;
     }
     boxesArr5[i].textContent = 'I changed to blue!';
+}
+*/
+
+// ES6
+for(const box of boxesArr6) {
+    if (box.className.includes('blue')) {
+        continue;
+    }
+    box.textContent = 'I changed to blue!';
 }
