@@ -575,3 +575,6 @@ class Street extends Element {
 
     }
 }
+
+const allParks = [new Park('Green Park', 1987, 0.2, 215)];
+console.log(allParks);
