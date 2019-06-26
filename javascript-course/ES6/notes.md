@@ -59,7 +59,7 @@ let age = years.map((el, index) => {
 * **Default Params**: set default values as parameters in a function for ex. `function newGuy (fName, lName = 'Jackson', age) {...}`
 
 * **Maps / hash maps** : creating a `new Map()` and setting values with `key value` pairs. can use .`size` to check `length`, `has` to see if key is present and `delete` to get rid of a k:v.
-* Benefit of maps:
+* **Benefit of maps:**
 * Use anything as key - making it easy to iterate and manipulate data
-* Really easy to get the size of map using the size property
+* Really easy to get the length of map using the `size` property
 * Easily add and remove data from a map
