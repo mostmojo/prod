@@ -530,3 +530,27 @@ const jimAthleteES6 = new AthleteES6('Jim', 1993, 'swimmer', 3, 10 );
 
 jimAthleteES6.wonMedal();
 jimAthleteES6.calculateAge();
+
+// --------------------------------------------------------------------------------
+// Challenge
+
+// Super class
+class Element {
+    constructor(name, buildYear) {
+        this.name = name;
+        this.buildYear = buildYear;
+    }
+}
+
+// Sub class
+class Park extends Element {
+    constructor(name, buildYear, area, numTrees) {
+        super(name, buildYear);
+        this.area = area;
+        this.numTrees = numTrees;
+    }
+    // Method for calculating tree density of an object
+    treeDensity() {
+        const density
+    }
+}
