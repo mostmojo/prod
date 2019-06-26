@@ -427,7 +427,7 @@ for (let [key, value] of question.entries()) {
 
 // 🔸 --- Lecture: Classes --- 🔸
 
-// ES5
+// ES5 - Parent constructor with prototypial inheritance from john5 instance of Person
 var Person5 = function(name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
@@ -440,3 +440,26 @@ Person5.prototype.calculateAge = function() {
 }
 
 var john5 = new Person5('John', 1990, 'teacher');
+
+// ES6
+class Person6 {
+    constructor (name, yearOfBirth, job) {
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+        this.job = job;
+    }
+
+    calculateAge() {
+        var age = new Date().getFullYear - this.yearOfBirth;
+        console.log(age);
+    }
+
+    static greeting() { // Static method, only attached to Person6 class
+        console.log('Hey there')
+    }
+}
+
+const john6 = new Person6('John', 1990, 'teacher');
+Person6.greeting(); // we can attach methods to this "Class" because behind the scenes it's actually an object, so we can attached functions to objects. Remember ES6 Classes are 'syntactic sugar'
+// Classes are NOT hoisted, unlike parent constructors. Need to first implement it and later use it
+// We can only add methods to classes, not properties

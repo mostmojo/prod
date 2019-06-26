@@ -63,3 +63,10 @@ let age = years.map((el, index) => {
 * Use anything as key - making it easy to iterate and manipulate data
 * Really easy to get the length of map using the `size` property
 * Easily add and remove data from a map
+
+### Classes
+
+* by declaring a 'parent constructor class' with `class` and `constructor`, we can then add a `prototype` without the need to `Person5.prototype.functionNameGoesHere()`, we simply write it out as `functionNameGoesHere()` and ES6 will do the rest behind the scenes.
+* Class - behind the scenes is actually an `object`, so we can attached `functions to objects`. Remember ES6 Classes are 'syntactic sugar'. ES6 helps us write more shorthand declarations.
+
+-----
