@@ -608,8 +608,8 @@ function reportParks(parks) {
 
     // Average age of each park
     const ages = parks.map(park => new Date().getFullYear() - park.buildYear);
-    const [totalAge, avgAge] = calc(ages);
-    console.log(`Our ${parks.length} have an average of ${avgAge}`)
+    const [totalAge, avgAge] = calc(ages); // will get the parks array and iterate through it, create a new array of parks, get age of the park, plug it into the calc() function, and return the avgAge as there isn't a 2nd parameter
+    console.log(`Our ${parks.length} parks have an average of ${avgAge}`)
 
     // Which park has more than 1000 trees
 }

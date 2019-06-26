@@ -5,7 +5,7 @@
 * Blocks and IIFEs
 * Strings
 * Arrow Functions
-* Destructuring
+* [Destructuring](https://wesbos.com/destructuring-objects/)
 * Arrays
 * Promises and Native Modules
 * Spread Operator
