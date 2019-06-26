@@ -576,5 +576,9 @@ class Street extends Element {
     }
 }
 
-const allParks = [new Park('Green Park', 1987, 0.2, 215)];
-console.log(allParks);
+// These are all INSTANCES of sub class Park
+const allParks = [
+    new Park('Green Park', 1987, 0.2, 215),
+    new Park('National Park', 1894, 2.9, 3541),
+    new Park('Oak Park', 1953, 0.4, 949)
+];
