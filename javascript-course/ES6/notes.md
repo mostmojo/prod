@@ -70,4 +70,5 @@ let age = years.map((el, index) => {
 * Class - behind the scenes is actually an `object`, so we can attached `functions to objects`. Remember ES6 Classes are 'syntactic sugar'. ES6 helps us write more shorthand declarations.
 * In ES6, by using `extends`, the sub class can inherit the super(parent) class properties. They are also 'fetched' with the `super` method. We no longer need to create the `Athlete5.prototype = Object.create(Person5.prototype);` link with ES5, but it does happen behind the scenes.
 * By declaring the `constructor` method, we can have sub classes inherit from super classes and instances of sub classes inherit from both. Ex. an instance of an Athlete `const jimAthleteES6 = new AthleteES6('Jim', 1993, 'swimmer', 3, 10 );` will inherit props from both Person and Athlete parent constructors and be able to utilize methods like `jimAthleteES6.calculateAge();` from its parents.
+* **Note** - In ruby, php and other OOPs, classes are as they are &rarr; **class based inheritance**. Whereas, in JavaScript, these 'classes' are tied with the prototype chain behind the scenes. &rarr; **prototype-based inheritance.**
 -----
