@@ -612,6 +612,8 @@ function reportParks(parks) {
     console.log(`Our ${parks.length} parks have an average of ${avgAge}`)
 
     // Which park has more than 1000 trees
+    const i = parks.map(park => park.numTrees).findIndex(park => park >= 1000);
+    console.log(`${parks[i].name} has more than 1000 trees`);
 }
 
 function reportStreets(streets) {
