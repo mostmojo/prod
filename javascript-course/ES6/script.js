@@ -515,7 +515,7 @@ class PersonES6 {
 
 class AthleteES6 extends PersonES6 {
     constructor(name, yearOfBirth, job, olympicGames, medals) {
-        super(name, yearOfBirth, job);
+        super(name, yearOfBirth, job); // fetches these parameters/args from the super PersonES6 class
         this.olympicGames = olympicGames;
         this.medals = medals;
     }
