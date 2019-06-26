@@ -464,7 +464,7 @@ Person6.greeting(); // we can attach methods to this "Class" because behind the 
 // Classes are NOT hoisted, unlike parent constructors. Need to first implement it and later use it
 // We can only add methods to classes, not properties
 
-// ES5
+// ES5 ----------------------------------- HOW TO CONNECT TWO FUNCTION CONSTRUCTORS ----------------------------------------------------
 // Super class
 var Person5 = function(name, yearOfBirth, job) {
     this.name = name;
@@ -497,4 +497,36 @@ var jonAthlete5 = new Athlete5('John', 1990, 'swimmer', 3, 10);
 jonAthlete5.calculateAge(); // 29 - because all instances of Person and Athlete inherit this method
 jonAthlete5.wonMedal(); // 11
 
+// ES6 ----------------------- HOW TO CONNECT TWO FUNCTION CONSTRUCTORS --------------------------------
+// Superclass
+class PersonES6 {
+    constructor (name, yearOfBirth, job) {
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+        this.job = job;
+    }
 
+    calculateAge() {
+        let age = new Date().getFullYear() - this.yearOfBirth;
+        console.log(age);
+    }
+
+}
+
+class AthleteES6 extends PersonES6 {
+    constructor(name, yearOfBirth, job, olympicGames, medals) {
+        super(name, yearOfBirth, job);
+        this.olympicGames = olympicGames;
+        this.medals = medals;
+    }
+
+    wonMedal() {
+        this.medals++;
+        console.log(this.medals);
+    }
+}
+
+const jimAthleteES6 = new AthleteES6('Jim', 1993, 'swimmer', 3, 10 );
+
+jimAthleteES6.wonMedal();
+jimAthleteES6.calculateAge();
