@@ -450,7 +450,7 @@ class Person6 {
     }
 
     calculateAge() {
-        var age = new Date().getFullYear - this.yearOfBirth;
+        let age = new Date().getFullYear - this.yearOfBirth;
         console.log(age);
     }
 
@@ -463,3 +463,38 @@ const john6 = new Person6('John', 1990, 'teacher');
 Person6.greeting(); // we can attach methods to this "Class" because behind the scenes it's actually an object, so we can attached functions to objects. Remember ES6 Classes are 'syntactic sugar'
 // Classes are NOT hoisted, unlike parent constructors. Need to first implement it and later use it
 // We can only add methods to classes, not properties
+
+// ES5
+// Super class
+var Person5 = function(name, yearOfBirth, job) {
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+}
+
+Person5.prototype.calculateAge = function() {
+    var age = new Date().getFullYear() - this.yearOfBirth;
+    console.log(age);
+}
+// Sub class
+var Athlete5 = function(name, yearOfBirth, job, olympicGames, medals) {
+    Person5.call(this, name, yearOfBirth, job); // can receive these params as they'e also passed on the line above to Athelete5
+    this.olympicGames = olympicGames;
+    this.medals = medals;
+}
+
+// a new instance of Athelete5, with `new` keyword will need to inherit from Athlete5 and Person parent constructors. Thus, both parents need the `this` keyword to point to the new instances' objects.
+
+Athlete5.prototype = Object.create(Person5.prototype); // tying Athlete5 with Person5 prototypes in the prototype chain. New Object is created with Person constructor as an argument passed into it
+
+Athlete5.prototype.wonMedal = function() { // has to be built AFTER the two prototype chains are connected, else the jonAthlete5.wonMedal() will throw an undefined error
+    this.medals++;
+    console.log(this.medals);
+}
+
+// jon object that inherits from both super and sub class
+var jonAthlete5 = new Athlete5('John', 1990, 'swimmer', 3, 10);
+jonAthlete5.calculateAge(); // 29 - because all instances of Person and Athlete inherit this method
+jonAthlete5.wonMedal(); // 11
+
+
