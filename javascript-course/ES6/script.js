@@ -532,7 +532,7 @@ jimAthleteES6.wonMedal();
 jimAthleteES6.calculateAge();
 
 // --------------------------------------------------------------------------------
-// Challenge
+// 🔺 ~~~~~~~~ Challenge ~~~~~~~~ 🔺
 
 // Super class
 class Element {
@@ -561,7 +561,7 @@ class Street extends Element {
     constructor(name, buildYear, length, size = 3) {
         super(name, buildYear);
         this.length = length;
-        this.sizes = sizes;
+        this.size = size;
     }
     // hash map
     classifyStreet() {
@@ -576,9 +576,35 @@ class Street extends Element {
     }
 }
 
-// These are all INSTANCES of sub class Park
+// INSTANCES of sub class Park
 const allParks = [
     new Park('Green Park', 1987, 0.2, 215),
     new Park('National Park', 1894, 2.9, 3541),
     new Park('Oak Park', 1953, 0.4, 949)
 ];
+
+// INSTANCES of sub class Street
+const allStreets = [
+    new Street('Ocean Avenue', 1999, 1.1, 4),
+    new Street('Evergreen Street', 2008, 2.7, 2),
+    new Street('4th street', 2015, 0.8), // should default to size = 3
+    new Street('Sunset Boulevard', 1982, 2.5, 5)
+];
+
+function reportParks(parks) {
+    console.log('----- PARKS REPORT -----');
+
+    // Density
+    parks.forEach(park => park.treeDensity());
+
+    // Average age of each park
+
+    // Which park has more than 1000 trees
+}
+
+function reportStreets(streets) {
+    console.log('----- STREETS REPORT -----');
+}
+
+reportParks(allParks);
+reportStreets(allStreets);
