@@ -17,3 +17,12 @@
 -----
 
 ## Old way &rarr; Async w/ callbacks
+
+* Having a setTimeout() function within another setTimeout() function, chains the two together so one is executed inside the other but only once the first one is called.
+* setTimeOut() function also has a 2nd parameter which can be passed into itself. Ex. Pass `recipeIDs[2]` value into `id` param to then log the value with template literals
+```
+setTimeout((id) => {
+    const recipe = { title: 'fresh tomato pasta', publisher: 'Jacob' };
+    console.log(`${id}: ${recipe.title} - published by ${recipe.publisher}`);
+}, 1000, recipeIDs[2]);
+```

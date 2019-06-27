@@ -24,16 +24,21 @@
         first();
     */
 
-        // Simulate data from a server
+        // Simulate data from a server - Callback hell
         function getRecipe() {
             setTimeout(() => {
                 const recipeIDs = [523, 883, 432, 974];
                 console.log(recipeIDs);
 
-                setTimeout((id) => {
-                    const recipe = { title: 'fresh tomato pasta', publisher: 'Jacob' };
-                    console.log(`${id}: ${recipe.title} - published by ${recipe.publisher}`);
-                }, 1000, recipeIDs[2]);
+                setTimeout(id => {
+                    const recipe = { title: 'Fresh tomato pasta', publisher: 'Jacob' };
+                    console.log(`${id}: ${recipe.title}`);
+
+                    setTimeout(publisher => {
+                        const recipe2 = { title: 'Italian pizza', publisher: 'Jacob' };
+                        console.log(recipe2);
+                    }, 1500, recipe.publisher) // related recipe from same publisher from const recipe
+                }, 1500, recipeIDs[2]);
             }, 1500);
         }
         getRecipe();
