@@ -50,6 +50,9 @@
         // 🔺 ------------------------------------ 🔺
         // Recipe w/ Promises
 
+
+        // PRODUCE
+
         // Promise with an executor function inside it. Anything inside 'resolve' is returned if callback is fulfilled, which is then handled with the `.then` method, which is available on our promised objects
        const getIDs = new Promise((resolve, reject) => { // Executor callback function
             setTimeout(() => {
@@ -63,9 +66,20 @@
                     const recipe = { title: 'Fresh tomato pasta', publisher: 'Jacob' };
                     resolve(`${ID}: ${recipe.title}`);
                 }, 1500, recID);
-            })
-        }
+            });
+        };
 
+        const getRelated = publisher => {
+            return new Promise((resolve, reject) => {
+                setTimeout(pub => {
+                    const recipe = { title: 'Italian pizza', publisher: 'Jacob' };
+                    resolve(`${pub}: ${recipe.title}`);
+                }, 1500, publisher);
+            });
+
+        };
+
+        // CONSUME
 
         // Promised object getIDs has the `.then` method with the param which contains the values of the resolved method or fulfilled promise!
         getIDs
@@ -75,10 +89,14 @@
         })
         .then(recipe => {
             console.log(recipe);
+            return getRelated('Jacob');
+        })
+        .then(recipe => {
+            console.log(recipe);
         })
         .catch(error => {
             console.log('Error! Please check code and try again'); // logs any rejected promises
-        })
+        });
 
     </script>
 </body>
