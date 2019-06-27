@@ -10,6 +10,7 @@
     <h1>Asynchronous JavaScript</h1>
     <script>
 
+    /*
         const second = () => {
             setTimeout(() => {
                 console.log('Async, hey there 👋🏼');
@@ -21,6 +22,22 @@
             console.log('The end');
         }
         first();
+    */
+
+        // Simulate data from a server
+        function getRecipe() {
+            setTimeout(() => {
+                const recipeIDs = [523, 883, 432, 974];
+                console.log(recipeIDs);
+
+                setTimeout((id) => {
+                    const recipe = { title: 'fresh tomato pasta', publisher: 'Jacob' };
+                    console.log(`${id}: ${recipe.title} - published by ${recipe.publisher}`);
+                }, 1000, recipeIDs[2]);
+            }, 1500);
+        }
+        getRecipe();
+
     </script>
 </body>
 </html>

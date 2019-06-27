@@ -13,3 +13,7 @@
 * `setTimeout()` function lives in Web APIs, outside the JS engine. We have access to them along with DOM Events and XMLHttpRequests()
 * Event handlers sit in WEB APIs until they are triggered. They then move into the Message Queue and wait to be executed
 * `Event loops` constantly monitor the `execution stack` and push things into it from the `message queue` as soon as the `execution stack` is empty
+
+-----
+
+## Old way &rarr; Async w/ callbacks
