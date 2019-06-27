@@ -36,3 +36,16 @@ setTimeout((id) => {
 * Implements the concept of a future value that we're expecting
 * Promise states: PENDING &rarr; (EVENT HAPPENS) &rarr; SETTLED/RESOLVED - FULFILLED || REJECTED
 * Promises are *produced* and then callbacks can *fulfill* or *reject* data
+
+* **PRODUCING PROMISES**
+* `new Promise((resolve, reject) => { ... resolve( x ) });` - Promises have resolve and reject **callback executors**  where `resolve` holds the values of everything that is retrieved from an API for example. `[1, 2, 3]`.
+
+* **CONSUMING PROMISES**
+```
+x.then(y => {
+    console.log(y);
+    return z(y[3]);
+});
+```
+
+Any values from the above resolve method are stored in the parameter after `.then` and can be logged, returned, etc.
