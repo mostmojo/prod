@@ -596,7 +596,7 @@ function calc(array) {
     const sum = array.reduce((prev, current, index) => prev + current, 0);
     //[3, 5, 6] -> 1) 0 + 3 = 3, 2) 3 + 5 = 8, 3) 8 + 6 = 14;
 
-    return [sum, sum / array.length];
+    return [sum, sum / array.length]; // total of all elements, average
 
 }
 
