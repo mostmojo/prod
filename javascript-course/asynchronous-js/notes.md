@@ -26,3 +26,4 @@ setTimeout((id) => {
     console.log(`${id}: ${recipe.title} - published by ${recipe.publisher}`);
 }, 1000, recipeIDs[2]);
 ```
+* Nested callbacks in AJAX can start to get messy. This is called **Callback hell** - hence, why `promises` were introduced in JS
