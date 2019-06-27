@@ -53,15 +53,18 @@
         // Promise with an executor function inside it. Anything inside 'resolve' is returned if callback is fulfilled, which is then handled with the `.then` method, which is available on our promised objects
        const getIDs = new Promise((resolve, reject) => { // Executor callback function
             setTimeout(() => {
-                resolve([523, 883, 432, 974]);
+                resolve([523, 883, 432, 974]); // when successful, grab these
             }, 1500);
         });
 
-        // Promised object getIDs has the then method with the param which contains the values of the resolved method or fulfilled promise!
+        // Promised object getIDs has the `.then` method with the param which contains the values of the resolved method or fulfilled promise!
         getIDs
         .then(IDs => {
             console.log(IDs);
-        });
+        })
+        .catch(error => {
+            console.log('Error! Please check code and try again'); // logs any rejected promises
+        })
 
     </script>
 </body>
