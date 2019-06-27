@@ -23,8 +23,10 @@
         }
         first();
     */
+        // 🔺 ------------------------------------ 🔺
 
-        // Simulate data from a server - Callback hell
+        /* Simulate data from a server - Callback hell
+
         function getRecipe() {
             setTimeout(() => {
                 const recipeIDs = [523, 883, 432, 974];
@@ -42,6 +44,24 @@
             }, 1500);
         }
         getRecipe();
+
+        */
+
+        // 🔺 ------------------------------------ 🔺
+        // Recipe w/ Promises
+
+        // Promise with an executor function inside it. Anything inside 'resolve' is returned if callback is fulfilled, which is then handled with the `.then` method, which is available on our promised objects
+       const getIDs = new Promise((resolve, reject) => { // Executor callback function
+            setTimeout(() => {
+                resolve([523, 883, 432, 974]);
+            }, 1500);
+        });
+
+        // Promised object getIDs has the then method with the param which contains the values of the resolved method or fulfilled promise!
+        getIDs
+        .then(IDs => {
+            console.log(IDs);
+        });
 
     </script>
 </body>

@@ -27,3 +27,12 @@ setTimeout((id) => {
 }, 1000, recipeIDs[2]);
 ```
 * Nested callbacks in AJAX can start to get messy. This is called **Callback hell** - hence, why `promises` were introduced in JS
+* **Promise** - keeps track of whether a certain event has happened already or not
+
+-----
+## Promises
+
+* Determines what happens after the event has happened (async event)
+* Implements the concept of a future value that we're expecting
+* Promise states: PENDING &rarr; (EVENT HAPPENS) &rarr; SETTLED/RESOLVED - FULFILLED || REJECTED
+* Promises are *produced* and then callbacks can *fulfill* or *reject* data
