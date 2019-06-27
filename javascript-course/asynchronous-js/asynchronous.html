@@ -82,6 +82,7 @@
         // CONSUME
 
         // Promised object getIDs has the `.then` method with the param which contains the values of the resolved method or fulfilled promise!
+        /*
         getIDs
         .then(IDs => {
             console.log(IDs);
@@ -97,6 +98,13 @@
         .catch(error => {
             console.log('Error! Please check code and try again'); // logs any rejected promises
         });
+        */
+
+        async function getRecipesAW() {
+            const IDs =  await getIDs;
+        }
+        getRecipesAW();
+
 
     </script>
 </body>

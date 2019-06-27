@@ -51,3 +51,10 @@ x.then(y => {
 * Any values from the above resolve method are stored in the parameter after `.then` and can be logged, returned, etc.
 
 * The `resolve()` method is used when the action was successful, and we want to resolve some data. On the other hand, the `reject()` method is used when the action has failed, so for example if there was an error, and we want to pass this error, so the `catch()` method can catch it and report an error.
+
+-----
+
+## Async / Await
+
+* Promises need to be consumed most of the time, so async/await helps do that
+
