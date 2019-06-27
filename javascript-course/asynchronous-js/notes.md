@@ -57,4 +57,8 @@ x.then(y => {
 ## Async / Await
 
 * Promises need to be consumed most of the time, so async/await helps do that
+* `async` before a function means one simple thing: a function always returns a `promise`.
+* The keyword `await` makes JavaScript wait until that promise settles and returns its result. [&rarr;](https://javascript.info/async-await)
+
+
 
