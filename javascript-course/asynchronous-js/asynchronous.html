@@ -54,7 +54,8 @@
         // PRODUCE
 
         // Promise with an executor function inside it. Anything inside 'resolve' is returned if callback is fulfilled, which is then handled with the `.then` method, which is available on our promised objects
-       const getIDs = new Promise((resolve, reject) => { // Executor callback function
+       /*
+        const getIDs = new Promise((resolve, reject) => { // Executor callback function
             setTimeout(() => {
                 resolve([523, 883, 432, 974]); // when successful, grab these
             }, 1500);
@@ -78,6 +79,8 @@
             });
 
         };
+
+        */
 
         // CONSUME
 
@@ -116,7 +119,18 @@
         getRecipesAW().then(result => console.log(`${result} - is the best 🍝`));
         */
 
-        fetch('https://crossorigin.me/https://www.metaweather.com/api/location/2487956/');
+        fetch('https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/2487956/')
+        .then(result => { // since fetch returns a promise, we can use .then
+            console.log(result);
+            return result.json(); // call json on the result to grab
+        })
+        .then(data => { // handle the json data in javascript
+            console.log(data);
+            const today = data.consolidated_weather[0];
+            console.log(`Temperatures in ${data.title} stay between ${today.max_temp} and ${today.min_temp} ☀️`)
+        })
+        .catch(error => console.log(error));
+
 
     </script>
 </body>

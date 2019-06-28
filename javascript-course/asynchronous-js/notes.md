@@ -79,4 +79,6 @@ getRecipeAW();
 ## Fetch function
 
 * Using `fetch()` is a modern way to communicate with APIs
-* Can use [crossorigin.me](https://corsproxy.github.io/) to bypass non CORS-enabled websites by adding `crossorigin.me/example.com` prefix
+* Can use [crossorigin.me](https://corsproxy.github.io/) or [cors-anywhere](https://cors-anywhere.herokuapp.com) to bypass non CORS-enabled websites by adding `crossorigin.me/example.com` prefix
+* Fetch API gets data and returns a `promise`. So, we can use `then` and `catch` methods on this to consume promises
+* In console: `body: readable stream` &rarr; JSON needs conversion to JavaScript
