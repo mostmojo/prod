@@ -109,8 +109,10 @@
 
             const related = await getRelated('Jacob');
             console.log(related);
+
+            return recipe;
         }
-        getRecipesAW();
+        getRecipesAW().then(result => console.log(`${result} is the best 🍝`));
 
     </script>
 </body>

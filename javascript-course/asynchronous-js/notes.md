@@ -62,5 +62,15 @@ x.then(y => {
 
 * Simply 'await' until a promise gets a result. Execution stops and we wait until the promise is returned.
 * Async/await enables the use of promises without callback hell and `.then` method binding.
+* Await can **only** be used inside an **async function**. We can never have the main code stopping. All we do is block the code in the `async function`, which runs in background anyway. We then call it `synchronously`.
 
-
+Ex.
+```
+async function getRecipeAW() {
+    // ... //
+}
+getRecipeAW();
+```
+* Async functions almost automatically return a promise
+* If we `return` a value from the async function using return keyword, then promise is automatically resolved. Hence, we can use .then to consume it. Ex. `getRecipesAW().then(result => console.log(${result} is the best));
+`
