@@ -119,18 +119,23 @@
         getRecipesAW().then(result => console.log(`${result} - is the best 🍝`));
         */
 
-        fetch('https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/2487956/')
-        .then(result => { // since fetch returns a promise, we can use .then
-            console.log(result);
-            return result.json(); // call json on the result to grab
-        })
-        .then(data => { // handle the json data in javascript
-            console.log(data);
-            const today = data.consolidated_weather[0];
-            console.log(`Temperatures in ${data.title} stay between ${today.max_temp} and ${today.min_temp} ☀️`)
-        })
-        .catch(error => console.log(error));
+        function getWeather(woeid) {
+            fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`)
+            .then(result => { // since fetch returns a promise, we can use .then
+                console.log(result);
+                return result.json(); // call json on the result to grab
+            })
+            .then(data => { // handle the json data in javascript
+                // console.log(data);
+                const today = data.consolidated_weather[0];
+                console.log(`Temperatures in ${data.title} stay between ${today.max_temp} and ${today.min_temp} ☀️`)
+            })
+            .catch(error => console.log(error));
+        }
+        getWeather(2487956);
+        getWeather(44418);
 
+        // By making fetch a getWeather function that takes in a 'where on earth id', the argument can be inputted into the URL with template literals
 
     </script>
 </body>
