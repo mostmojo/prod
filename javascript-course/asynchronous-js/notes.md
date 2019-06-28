@@ -74,3 +74,9 @@ getRecipeAW();
 * Async functions almost automatically return a promise
 * If we `return` a value from the async function using return keyword, then promise is automatically resolved. Hence, we can use .then to consume it. Ex. `getRecipesAW().then(result => console.log(${result} is the best));
 `
+-----
+
+## Fetch function
+
+* Using `fetch()` is a modern way to communicate with APIs
+* Can use [crossorigin.me](https://corsproxy.github.io/) to bypass non CORS-enabled websites by adding `crossorigin.me/example.com` prefix
