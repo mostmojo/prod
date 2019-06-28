@@ -122,13 +122,13 @@
         function getWeather(woeid) {
             fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`)
             .then(response => { // since fetch returns a promise, we can use .then
-                console.log(response);
+                // console.log(response);
                 return response.json(); // call json on the result to grab
             })
             .then(data => { // handle the json data in javascript
                 // console.log(data);
                 const today = data.consolidated_weather[0];
-                console.log(`Temperatures in ${data.title} stay between ${today.max_temp} and ${today.min_temp} ☀️`)
+                console.log(`Temperatures today in ${data.title} stay between ${today.max_temp} and ${today.min_temp} ☀️`)
             })
             .catch(error => console.log(error));
         }
@@ -140,15 +140,24 @@
         console.log('---------------ASYNC/AWAIT-----------------')
 
         async function getWeatherAW(woeid) {
-            const result = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`);
 
-            const data = await result.json();
-
-            console.log(data);
+            try {
+                const result = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`);
+                const data = await result.json();
+                const tomorrow = data.consolidated_weather[1];
+                console.log(`Temperatures tomorrow in ${data.title} stay between ${tomorrow.max_temp} and ${tomorrow.min_temp} ☀️`);
+                return data; // async func always returns a promise. The data returned is the resolved value of the promise. We can access it using the 'then' method
+            } catch(error) {
+                alert(error);
+            }
         }
 
         getWeatherAW(2487956);
-        getWeatherAW(44418);
+        let dataLondon;
+        getWeatherAW(44418).then(data => {
+            dataLondon = data
+            console.log(dataLondon);
+        });
 
     </script>
 </body>
