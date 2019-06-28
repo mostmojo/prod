@@ -60,5 +60,7 @@ x.then(y => {
 * `async` before a function means one simple thing: a function always returns a `promise`.
 * The keyword `await` makes JavaScript wait until that promise settles and returns its result. [&rarr;](https://javascript.info/async-await)
 
+* Simply 'await' until a promise gets a result. Execution stops and we wait until the promise is returned.
+* Async/await enables the use of promises without callback hell and `.then` method binding.
 
 
