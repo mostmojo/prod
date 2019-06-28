@@ -121,9 +121,9 @@
 
         function getWeather(woeid) {
             fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`)
-            .then(result => { // since fetch returns a promise, we can use .then
-                console.log(result);
-                return result.json(); // call json on the result to grab
+            .then(response => { // since fetch returns a promise, we can use .then
+                console.log(response);
+                return response.json(); // call json on the result to grab
             })
             .then(data => { // handle the json data in javascript
                 // console.log(data);
@@ -136,6 +136,19 @@
         getWeather(44418);
 
         // By making fetch a getWeather function that takes in a 'where on earth id', the argument can be inputted into the URL with template literals
+
+        console.log('---------------ASYNC/AWAIT-----------------')
+
+        async function getWeatherAW(woeid) {
+            const result = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`);
+
+            const data = await result.json();
+
+            console.log(data);
+        }
+
+        getWeatherAW(2487956);
+        getWeatherAW(44418);
 
     </script>
 </body>
